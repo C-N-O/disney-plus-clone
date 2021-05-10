@@ -44,4 +44,4 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 To learn React, check out the [React documentation](https://reactjs.org/).
 
 https://www.youtube.com/watch?v=kn8HPNwPEkw&t=400s
-Tech Stack: React, Redux, Styled-Components, React Slick (https://www.npmjs.com/package/react-slick) (for slider)
+Tech Stack: React, Redux, Styled-Components, React Slick (https://www.npmjs.com/package/react-slick) (for slider), react router DOM, firebase, firebase-tools
