@@ -60,7 +60,7 @@ function Header() {
     <Nav>
       <Logo src='/images/logo.svg' />
 
-      {!username ? (
+      {username === '' || username === null ? (
         <LoginContainer>
           <Login onClick={signIn}>LOGIN</Login>
         </LoginContainer>
