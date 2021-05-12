@@ -1,37 +1,42 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useParams } from 'react-router-dom';
+import { selectMovies } from '../features/movie/movieSlice';
+import { useSelector } from 'react-redux';
 
 function Details() {
+  const { id } = useParams();
+  const movies = useSelector(selectMovies);
+  const movie = movies.find((mov) => mov.id === id);
+
+  console.log(movie);
+
   return (
     <Container>
       <Background>
-        <img src='/images/background-img.jpeg' />
+        <img src={movie.backgroundImg} alt='' />
       </Background>
       <ImageTitle>
-        <img src='/images/img-title.png' />
+        <img src={movie.titleImg} alt='' />
       </ImageTitle>
       <Controls>
         <PlayButton>
-          <img src='/images/play-icon-black.png' />
+          <img src='/images/play-icon-black.png' alt='' />
           <span>PLAY</span>
         </PlayButton>
         <TrailerButton>
-          <img src='/images/play-icon-white.png' />
+          <img src='/images/play-icon-white.png' alt='' />
           <span>TRAILER</span>
         </TrailerButton>
         <AddButton>
           <span>+</span>
         </AddButton>
         <GroupWatchButton>
-          <img src='/images/group-icon.png' />
+          <img src='/images/group-icon.png' alt='' />
         </GroupWatchButton>
       </Controls>
-      <SubTitle>2021 . 7m . Family, Fantasy, Kids, Animation</SubTitle>
-      <Description>
-        A Chinese mom who’s sad when her grown son leaves home gets another
-        chance at motherhood when one of her dumplings springs to life. But she
-        finds that nothing stays cute and small forever.
-      </Description>
+      <SubTitle>{movie.subTitle}</SubTitle>
+      <Description>{movie.description}</Description>
     </Container>
   );
 }
@@ -45,7 +50,7 @@ const Container = styled.div`
 `;
 
 const Background = styled.div`
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   bottom: 0;

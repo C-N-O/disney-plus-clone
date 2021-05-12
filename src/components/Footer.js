@@ -4,7 +4,7 @@ import styled from 'styled-components';
 function Footer() {
   return (
     <Container>
-      <img src='/images/logo.svg'></img>
+      <img src='/images/logo.svg' alt=''></img>
       <Links>
         <span>Privacy Policy</span>
         <span>Subscriber Agreement</span>

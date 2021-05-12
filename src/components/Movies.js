@@ -1,98 +1,59 @@
 import React from 'react';
 import styled from 'styled-components';
+import { selectMovies } from '../features/movie/movieSlice';
+import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 function Movies() {
+  const movies = useSelector(selectMovies);
+
+  console.log(movies);
   return (
     <Container>
-      <h4>New to Disney+</h4>
-      <Content>
-        <Wrap>
-          <img src='/images/simpsons.jpeg' />
-        </Wrap>
-        <Wrap>
-          <img src='/images/iron-man.jpeg' />
-        </Wrap>
-        <Wrap>
-          <img src='/images/simpsons.jpeg' />
-        </Wrap>
-        <Wrap>
-          <img src='/images/avatar.jpeg' />
-        </Wrap>
-        <Wrap>
-          <img src='/images/simpsons.jpeg' />
-        </Wrap>
-      </Content>
       <h4>Recommended for you</h4>
       <Content>
-        <Wrap>
-          <img src='/images/simpsons.jpeg' />
-        </Wrap>
-        <Wrap>
-          <img src='/images/avatar.jpeg' />
-        </Wrap>
-        <Wrap>
-          <img src='/images/simpsons.jpeg' />
-        </Wrap>
-        <Wrap>
-          <img src='/images/iron-man.jpeg' />
-        </Wrap>
-        <Wrap>
-          <img src='/images/simpsons.jpeg' />
-        </Wrap>
+        {movies &&
+          movies.map((mov) => (
+            <Wrap key={mov.id}>
+              <Link to={`/detail/${mov.id}`}>
+                <img src={mov.cardImg} alt='' />
+              </Link>
+            </Wrap>
+          ))}
       </Content>
       <h4>Action and Adventure</h4>
+
       <Content>
-        <Wrap>
-          <img src='/images/avatar.jpeg' />
-        </Wrap>
-        <Wrap>
-          <img src='/images/simpsons.jpeg' />
-        </Wrap>
-        <Wrap>
-          <img src='/images/iron-man.jpeg' />
-        </Wrap>
-        <Wrap>
-          <img src='/images/simpsons.jpeg' />
-        </Wrap>
-        <Wrap>
-          <img src='/images/simpsons.jpeg' />
-        </Wrap>
+        {movies &&
+          movies.map((mov) => (
+            <Wrap key={mov.id}>
+              <Link to={`/detail/${mov.id}`}>
+                <img src={mov.cardImg} alt='' />
+              </Link>
+            </Wrap>
+          ))}
       </Content>
       <h4>Drama Series</h4>
       <Content>
-        <Wrap>
-          <img src='/images/iron-man.jpeg' />
-        </Wrap>
-        <Wrap>
-          <img src='/images/simpsons.jpeg' />
-        </Wrap>
-        <Wrap>
-          <img src='/images/simpsons.jpeg' />
-        </Wrap>
-        <Wrap>
-          <img src='/images/avatar.jpeg' />
-        </Wrap>
-        <Wrap>
-          <img src='/images/simpsons.jpeg' />
-        </Wrap>
+        {movies &&
+          movies.map((mov) => (
+            <Wrap key={mov.id}>
+              <Link to={`/detail/${mov.id}`}>
+                <img src={mov.cardImg} alt='' />
+              </Link>
+            </Wrap>
+          ))}
       </Content>
       <h4>Thrillers</h4>
       <Content>
-        <Wrap>
-          <img src='/images/simpsons.jpeg' />
-        </Wrap>
-        <Wrap>
-          <img src='/images/avatar.jpeg' />
-        </Wrap>
-        <Wrap>
-          <img src='/images/simpsons.jpeg' />
-        </Wrap>
-        <Wrap>
-          <img src='/images/simpsons.jpeg' />
-        </Wrap>
-        <Wrap>
-          <img src='/images/iron-man.jpeg' />
-        </Wrap>
+        {movies &&
+          movies.map((mov) => (
+            <Wrap key={mov.id}>
+              <Link to={`/detail/${mov.id}`}>
+                <img src={mov.cardImg} alt='' />
+              </Link>
+            </Wrap>
+          ))}
       </Content>
     </Container>
   );
@@ -105,7 +66,7 @@ const Container = styled.div``;
 const Content = styled.div`
   display: grid;
   grid-gap: 25px;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   margin-bottom: 40px;
 `;
 

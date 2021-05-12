@@ -5,13 +5,13 @@ function Login() {
   return (
     <Container>
       <Content>
-        <Logo1 src='/images/cta-logo-one.svg' />
+        <Logo1 src='/images/cta-logo-one.svg' alt='' />
         <SignUpButton>Get All There</SignUpButton>
         <Description>
           Explore the greatest stories from Disney, Pixar, Marvel, Star Wars and
           National Geographic, as well as exclusive Disney+ Originals.
         </Description>
-        <Logo1 src='/images/cta-logo-two.png' />
+        <Logo1 src='/images/cta-logo-two.png' alt='' />
       </Content>
     </Container>
   );
@@ -73,5 +73,3 @@ const Description = styled.p`
   letter-spacing: 1.5px;
   line-height: 1.5;
 `;
-
-const Logo2 = styled.img``;
